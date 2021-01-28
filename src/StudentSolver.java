@@ -1,21 +1,18 @@
 public class StudentSolver {
     public static void main(String[] args) {
-        Cell kell = new Cell(1111);
+        Cell kell = new Cell();
+
         System.out.println(kell);
-
+        kell.changeWall(1);
+        System.out.println(kell);
     }
 
-    
+    /*
     public static byte[] solve(int n) {
-        
-        byte[] cells = new byte[n];
-        Cell kell = new Cell(1111);
-        cells[0] = kell.getxNeg();
-        return cells;
-        
+        return 0;
     }
-    
-  
+    */
+
 }
 /*
 BOUNDARY RULES
