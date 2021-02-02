@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class StudentSolver {
     public static void main(String[] args) {
         byte[] alienMaze = solve(2);
@@ -5,7 +8,7 @@ public class StudentSolver {
         for (int i = 0; i < alienMaze.length; i++) {
             System.out.println(alienMaze[i]);
         }
-        
+
     }
 
     public static byte[] solve(int n) {
@@ -18,6 +21,9 @@ public class StudentSolver {
         Cell[] cells = new Cell[mazeSize];
         int index = 0;
 
+        // hashmap loc:index
+        Map cellMap = new HashMap<>();
+
         // makes all cells with proper locations
         for (int t = 0; t < n; t++) {
             for (int z = 0; z < n; z++) {
@@ -29,12 +35,29 @@ public class StudentSolver {
                         
                         // gives each cell a name
                         cells[index].setName((char) ('A' + index));
+
+                        // location : index
+                        // hashmap loc:index
+                        cellMap.put(t + "" + z + "" + y + "" + x, index);
                         System.out.println(cells[index].name);
+                        System.out.println(t + "" + z + "" + y + "" + x);
+                        System.out.println("index = " + index);
                         index += 1;
                     }
                 }
             }
         }
+
+
+        // starting cell
+        Cell start = cells[1];
+        System.out.println(start.getLocation());
+        System.out.println(start.getWalls());
+
+        int testIndex = (int) cellMap.get("0011");
+        System.out.println("testIndex = " + testIndex);
+
+
 
         // transfers walls to maze array
         for (int i = 0; i < mazeSize; i++) {
@@ -53,4 +76,6 @@ if coordinate == n, you cant move in the positive direction
 
 LOOP
 if cell.parent == itself, you've found the loop
+
+MULTIDIMENSIONAL ARRAY
 */

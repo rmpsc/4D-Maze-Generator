@@ -21,7 +21,9 @@ public class Cell {
     // GETTERS
     public int getWalls() { return walls; }
 
-    public int[] getLocation() { return location; }
+    public String getLocation() {
+        return "[" + location[0] + ", " + location[1] + ", " + location[2] + ", " + location[3] + "]";
+    }
 
     public Cell getParent() { return parent; }
 
