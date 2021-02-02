@@ -1,0 +1,8 @@
+TO-DO
+- create location variable
+- make all cells and set locations for user input n
+
+DONE
+- create cell object
+- create changeWall function
+- return walls in bytes

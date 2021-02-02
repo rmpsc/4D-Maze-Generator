@@ -5,19 +5,24 @@ public class Cell {
 
     // DEFAULT CONSTRUCTOR
     Cell() {
-        walls = 0b00001110;
+        walls = 0b00001111;
     }
 
     // CONSTRUCTOR
-    Cell(int walls) {
+    Cell(int walls, int[] location) {
         this.walls = walls;
+        this.location = location;
     }
 
     // GETTERS
     public int getWalls() { return walls; }
 
+    public int[] getLocation() { return location; }
+
     // SETTERS
     public void setWalls(int walls) { this.walls = walls; }
+
+    public void setLocation(int[] location) { this.location = location; }
 
     
     public void changeWall(int change) {
