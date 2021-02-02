@@ -1,7 +1,9 @@
 public class Cell {
 
+    char name;
     int walls;
     int[] location;
+    Cell parent;
 
     // DEFAULT CONSTRUCTOR
     Cell() {
@@ -9,9 +11,11 @@ public class Cell {
     }
 
     // CONSTRUCTOR
-    Cell(int walls, int[] location) {
+    Cell(char name, int walls, int[] location, Cell parent) {
+        this.name = name;
         this.walls = walls;
         this.location = location;
+        this.parent = parent;
     }
 
     // GETTERS
@@ -19,12 +23,19 @@ public class Cell {
 
     public int[] getLocation() { return location; }
 
+    public Cell getParent() { return parent; }
+
+    public char getName() { return name; }
+
     // SETTERS
     public void setWalls(int walls) { this.walls = walls; }
 
     public void setLocation(int[] location) { this.location = location; }
 
-    
+    public void setParent(Cell parent) { this.parent = parent; }
+
+    public void setName(char name) { this.name = name; }
+
     public void changeWall(int change) {
         // holds bit value to be checked
         int bit = (walls >> (change - 1)) & 1;
