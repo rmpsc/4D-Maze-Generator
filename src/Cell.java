@@ -4,6 +4,7 @@ public class Cell {
     int walls;
     int[] location;
     Cell parent;
+    Cell[] neighbors;
 
     // DEFAULT CONSTRUCTOR
     Cell() {

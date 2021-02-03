@@ -1,8 +1,34 @@
 TO-DO
-- create location variable
-- make all cells and set locations for user input n
+- construct algo
+- not going to remake walls; can remove code in cell
 
 DONE
 - create cell object
 - create changeWall function
 - return walls in bytes
+- create location variable
+- make all cells and set locations for user input n
+
+BOUNDARY RULES
+if coordinate == 0, you cant move in the negative direction
+if coordinate == n-1, you cant move in the positive direction
+
+LOOP
+if cell.parent == itself, you've found the loop
+
+STEPS
+1) make sure you're not breaking maze boudaries
+- get a random number for coordinate and direction
+- check if valid wall
+2) break a valid wall
+3) change wall value of that cell
+4) increment +1/-1 to access cell you entered
+5) change that cells wall value
+6) make that cells parent = previous cell's parent
+7
+
+IMP
+check if the cell is not pointing to itself
+if it is, itll make a loop
+to break a wall, the other cell must be pointing at itself
+AND cannot be the start point (cell[0])
