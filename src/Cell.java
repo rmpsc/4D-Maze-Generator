@@ -1,3 +1,7 @@
+// Romel Pascua 017167304
+// CECS 428 Alien Maze
+// 2/05/2021
+
 public class Cell {
 
     int walls;
@@ -43,14 +47,18 @@ public class Cell {
     public void setX(int x) { this.x = x; }
 
     // MISC
+
+    // breaks a wall
     public void changeWall(int change) {
         walls = walls & ~(1 << (change - 1));
     }
 
+    // returns one wall
     public int getWall(int dir) {
         return (walls >> (dir - 1)) & 1;
     }
 
+    // returns coordinate
     public int getExactCoord(int coord) {
         if (coord == 0) { return t; }
         if (coord == 1) { return z; }
@@ -59,10 +67,12 @@ public class Cell {
         return 0;
     }
 
+    // returns location as string
     public String getLocation() {
         return t + ", " + z + ", " + y + ", " + x;
     }
 
+    // returns neighbors string location
     public String getNeighbor(int direction, int coordinate) {
         switch (coordinate) {
             case 0:
