@@ -5,6 +5,10 @@ public class Cell {
     int[] location;
     Cell parent;
     int index;
+    int t;
+    int z;
+    int y;
+    int x;
 
     // DEFAULT CONSTRUCTOR
     Cell() {
@@ -28,32 +32,48 @@ public class Cell {
     }
 
     public String getLocation() {
-        return location[0] + "" + location[1] + "" + location[2] + "" + location[3];
+        return t + ", " + z + ", " + y + ", " + x;
     }
 
     public String getNeighbor(int direction, int coordinate) {
         switch (coordinate) {
             case 0:
-                if (direction % 2 == 0) { return (location[0] - 1) + "" + location[1] + "" + location[2] + "" + location[3]; }
-                else { return (location[0] + 1) + "" + location[1] + "" + location[2] + "" + location[3]; }
+                if (direction % 2 == 0) { return (t - 1) + ", " + z + ", " + y + ", " + x; }
+                else { return (t + 1) + ", " + z + ", " + y + ", " + x; }
             case 1:
-                if (direction % 2 == 0) { return location[0] + "" + (location[1] - 1) + "" + location[2] + "" + location[3]; }
-                else { return location[0] + "" + (location[1] + 1) + "" + location[2] + "" + location[3]; }
+                if (direction % 2 == 0) { return t + ", " + (z - 1) + ", " + y + ", " + x; }
+                else { return t + ", " + (z + 1) + ", " + y + ", " + x; }
             case 2:
-                if (direction % 2 == 0) { return location[0] + "" + location[1] + "" + (location[2] - 1) + "" + location[3]; }
-                else { return location[0] + "" + location[1] + "" + (location[2] + 1) + "" + location[3]; }
+                if (direction % 2 == 0) { return t + ", " + z + ", " + (y - 1) + ", " + x; }
+                else { return t + ", " + z + ", " + (y + 1) + ", " + x; }
             case 3:
-                if (direction % 2 == 0) { return location[0] + "" + location[1] + "" + location[2] + "" + (location[3] - 1); }
-                else { return location[0] + "" + location[1] + "" + location[2] + "" + (location[3] + 1); }
+                if (direction % 2 == 0) { return t + ", " + z + ", " + y + ", " + (x - 1); }
+                else { return t + ", " + z + ", " + y + ", " + (x + 1); }
             default:
                 return "default switch case";
         }
+    }
+
+    public int getExactCoord(int coord) {
+        if (coord == 0) { return t; }
+        if (coord == 1) { return z; }
+        if (coord == 2) { return y; }
+        if (coord == 3) { return x; }
+        return 0;
     }
 
     public Cell getParent() { return parent; }
 
     public char getName() { return name; }
 
+    public int getT() { return t; }
+    public int getZ() { return z; }
+    public int getY() { return y; }
+    public int getX() { return x; }
+    public void setT(int t) { this.t = t; }
+    public void setZ(int z) { this.z = z; }
+    public void setY(int y) { this.y = y; }
+    public void setX(int x) { this.x = x; }
     // SETTERS
     public void setWalls(int walls) { this.walls = walls; }
 
@@ -66,17 +86,9 @@ public class Cell {
     public void setIndex(int index) { this.index = index; }
 
     public void changeWall(int change) {
-        // holds bit value to be checked
-        int bit = (walls >> (change - 1)) & 1;
-        // System.out.println("bit before = " + bit);
-        
         walls = walls & ~(1 << (change - 1));
-        
-        bit = (walls >> (change - 1)) & 1;
-        // System.out.println("bit after = " + bit);
     }
     
-
     @Override
     public String toString() {
         return Integer.toString(walls);

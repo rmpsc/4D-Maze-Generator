@@ -33,3 +33,4 @@ check if the cell is not pointing to itself
 if it is, itll make a loop
 to break a wall, the other cell must be pointing at itself
 AND cannot be the start point (cell[0])
+!!!!!! you only pop when you break !!!!!!
