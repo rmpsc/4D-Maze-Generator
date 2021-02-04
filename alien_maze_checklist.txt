@@ -1,6 +1,7 @@
 TO-DO
 - construct algo
-- not going to remake walls; can remove code in cell
+- not going to remake walls; can remove code in cell (only breaking walls)
+- make sure to only break wall if there is a wall there
 
 DONE
 - create cell object
