@@ -3,7 +3,6 @@
 // 2/05/2021
 
 public class Cell {
-
     int walls;
     Cell parent;
     int t;

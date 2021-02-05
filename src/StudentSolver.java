@@ -1,17 +1,16 @@
+// Romel Pascua 017167304
+// CECS 428 Alien Maze
+// 2/05/2021
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class StudentSolver {
-    public static void main(String[] args) {
-        byte[] alienMaze = solve(40);
-        System.out.println("done");
-    }
 
     public static byte[] solve(int n) {
         
         int mazeSize = (int) Math.pow(n, 4);
-        System.out.println("mazeSize = " + mazeSize);
         // array to fit all walls
         byte[] maze = new byte[mazeSize];
         // array to fit all cell objects
