@@ -1,5 +1,5 @@
 # 4D Maze Generator
-Generates a random 4 dimensional maze. The four dimensions are time, z, y, and x.
+Generates a random 4 dimensional maze with heuristic approach. The four dimensions are time, z, y, and x.
 
 ## Cells
 - Each cell has a location `(t, z, y, x)` and a byte representing which walls are open or not
